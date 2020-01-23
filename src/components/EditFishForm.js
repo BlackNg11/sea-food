@@ -1,19 +1,16 @@
 import React from "react";
 
 class EditFishForm extends React.Component {
-
   handleChange = e => {
-    //Update Fishes
-
     //1.Clone state
     const updateFish = {
       ...this.props.fish,
       [e.currentTarget.name]: e.currentTarget.value
     };
 
-    this.props.updateFish(this.props.index, updateFish)
-
-  }
+    //2. Update Fishes
+    this.props.updateFish(this.props.index, updateFish);
+  };
 
   render() {
     //console.log(this.props);
@@ -57,7 +54,9 @@ class EditFishForm extends React.Component {
           placeholder="Image"
         />
 
-        <button onClick={() => this.props.deleteFish(this.props.index)}>Remove the fish</button>
+        <button onClick={() => this.props.deleteFish(this.props.index)}>
+          Remove the fish
+        </button>
       </div>
     );
   }
